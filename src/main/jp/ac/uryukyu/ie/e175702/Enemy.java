@@ -1,4 +1,4 @@
-package jp.ac.uyukyu.ie.e175702;
+package jp.ac.uryukyu.ie.e175702;
 
 /**
  * 敵クラス。
@@ -46,9 +46,11 @@ public class Enemy {
      * @param hero 攻撃対象
      */
     public void attack(Hero hero){
-        int damage = (int)(Math.random() * attack);
-        System.out.printf("%sの攻撃！%sに%dのダメージを与えた！！\n", name, hero.getName(), damage);
-        hero.wounded(damage);
+        if(dead==false) {
+            int damage = (int) (Math.random() * attack);
+            System.out.printf("%sの攻撃！%sに%dのダメージを与えた！！\n", name, hero.getName(), damage);
+            hero.wounded(damage);
+        }
     }
 
     /**
